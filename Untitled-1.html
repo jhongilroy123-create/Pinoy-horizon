@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinoy Horizon | Jobs</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            overflow: auto;
+        }
+
+        .jobs-page {
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+
+        .jobs-nav {
+            background: #111827;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .jobs-logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .jobs-logo i {
+            color: #ff7a00;
+        }
+
+        .jobs-nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .jobs-nav a:hover {
+            color: #ff7a00;
+        }
+
+        /* HEADER */
+
+        .jobs-header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        .jobs-header h1 {
+            font-size: 55px;
+            margin: 0;
+            color: #111827;
+        }
+
+        .jobs-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* SEARCH */
+
+        .job-search {
+            max-width: 800px;
+            margin: 20px auto 50px;
+            display: flex;
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        .job-search input {
+            flex: 1;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .job-search button {
+            padding: 16px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #ff7a00;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .job-search button:hover {
+            background: #e66d00;
+        }
+
+        /* JOB CONTAINER */
+
+        .jobs-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding-bottom: 60px;
+        }
+
+        /* JOB CARD */
+
+        .job-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-country {
+            color: #ff7a00;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .job-card h2 {
+            margin: 5px 0 15px;
+        }
+
+        .job-info {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .salary {
+            color: #16803c;
+            font-weight: bold;
+        }
+
+        .apply-btn {
+            margin-top: 15px;
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 30px;
+            background: #111827;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .apply-btn:hover {
+            background: #ff7a00;
+        }
+
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            font-size: 20px;
+            color: #777;
+            display: none;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 700px) {
+
+            .jobs-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .jobs-nav a {
+                margin-left: 10px;
+            }
+
+            .jobs-header h1 {
+                font-size: 40px;
+            }
+
+            .jobs-container {
+                grid-template-columns: 1fr;
+            }
+
+            .job-search {
+                flex-direction: column;
+            }
+
+            .job-search button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="jobs-page">
+
+    <!-- NAVIGATION -->
+
+    <nav class="jobs-nav">
+
+        <div class="jobs-logo">
+            <i class="fa-solid fa-plane-departure"></i>
+            PINOY HORIZON
+        </div>
+
+        <div>
+
+            <a href="Pinyo Horizon Agency.html">
+                Home
+            </a>
+
+            <a href="jobs.html">
+                Jobs
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <section class="jobs-header">
+
+        <h1>Find Jobs Abroad</h1>
+
+        <p>
+            Discover overseas employment opportunities for Filipino workers.
+        </p>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <div class="job-search">
+
+        <input
+            id="jobSearch"
+            type="text"
+            placeholder="Search job, country, or industry">
+
+        <button onclick="searchJobs()">
+            <i class="fa-solid fa-search"></i>
+            Search
+        </button>
+
+    </div>
+
+
+    <!-- JOBS -->
+
+    <section class="jobs-container" id="jobsContainer">
+
+
+        <!-- JAPAN -->
+
+        <div class="job-card">
+
+            <div class="job-country">
+                🇯🇵 JAPAN
+            </div>
+
+            <h2>Caregiver</h2>
+
+            <div class="job-info">
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Japan
+                </div>
+
+                <div class="salary">
+                    ¥280,000 / month
+                </div>
+
+                <div>
+                    ✔ Visa Sponsorship
+                </div>
+
+                <div>
+                    ✔ Accommodation
+                </div>
+
+            </div>
+
+            <button class="apply-btn" onclick="applyJob('Japan Caregiver')">
+                Apply Now
+            </button>
+
+        </div>
+
+
+        <!-- JAPAN FACTORY -->
+
+        <div class="job-card">
+
+            <div class="job-country">
+                🇯🇵 JAPAN
+            </div>
+
+            <h2>Factory Worker</h2>
+
+            <div class="job-info">
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Japan
+                </div>
+
+                <div class="salary">
+                    ¥250,000 / month
+                </div>
+
+                <div>
+                    ✔ No experience required
+                </div>
+
+                <div>
+                    ✔ Company Housing
+                </div>
+
+            </div>
+
+            <button class="apply-btn" onclick="applyJob('Japan Factory Worker')">
+                Apply Now
+            </button>
+
+        </div>
+
+
+        <!-- CANADA -->
+
+        <div class="job-card">
+
+            <div class="job-country">
+                🇨🇦 CANADA
+            </div>
+
+            <h2>Registered Nurse</h2>
+
+            <div class="job-info">
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Canada
+                </div>
+
+                <div class="salary">
+                    CAD $5,000 / month
+                </div>
+
+                <div>
+                    ✔ Healthcare position
+                </div>
+
+                <div>
+                    ✔ Employer Support
+                </div>
+
+            </div>
+
+            <button class="apply-btn" onclick="applyJob('Canada Nurse')">
+                Apply Now
+            </button>
+
+        </div>
+
+
+        <!-- UAE -->
+
+        <div class="job-card">
+
+            <div class="job-country">
+                🇦🇪 UAE
+            </div>
+
+            <h2>Electrician</h2>
+
+            <div class="job-info">
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Dubai, UAE
+                </div>
+
+                <div class="salary">
+                    AED 4,000 / month
+                </div>
+
+                <div>
+                    ✔ Accommodation
+                </div>
+
+                <div>
+                    ✔ Transportation
+                </div>
+
+            </div>
+
+            <button class="apply-btn" onclick="applyJob('UAE Electrician')">
+                Apply Now
+            </button>
+
+        </div>
+
+
+        <!-- SOUTH KOREA -->
+
+        <div class="job-card">
+
+            <div class="job-country">
+                🇰🇷 SOUTH KOREA
+            </div>
+
+            <h2>Manufacturing Worker</h2>
+
+            <div class="job-info">
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    South Korea
+                </div>
+
+                <div class="salary">
+                    ₩2,500,000 / month
+                </div>
+
+                <div>
+                    ✔ Manufacturing
+                </div>
+
+                <div>
+                    ✔ Company Accommodation
+                </div>
+
+            </div>
+
+            <button class="apply-btn" onclick="applyJob('South Korea Manufacturing')">
+                Apply Now
+            </button>
+
+        </div>
+
+
+        <!-- GERMANY -->
+
+        <div class="job-card">
+
+            <div class="job-country">
+                🇩🇪 GERMANY
+            </div>
+
+            <h2>Engineer</h2>
+
+            <div class="job-info">
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Germany
+                </div>
+
+                <div class="salary">
+                    €3,500 / month
+                </div>
+
+                <div>
+                    ✔ Engineering position
+                </div>
+
+                <div>
+                    ✔ Employer Support
+                </div>
+
+            </div>
+
+            <button class="apply-btn" onclick="applyJob('Germany Engineer')">
+                Apply Now
+            </button>
+
+        </div>
+
+
+        <div class="no-results" id="noResults">
+            No matching jobs found.
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+
+function searchJobs() {
+
+    const search =
+        document
+        .getElementById("jobSearch")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".job-card");
+
+    let found = false;
+
+    cards.forEach(card => {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+
+            card.style.display = "block";
+            found = true;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document.getElementById("noResults").style.display =
+        found ? "none" : "block";
+
+}
+
+
+function applyJob(jobName) {
+
+    alert(
+        "You selected: " +
+        jobName +
+        "\n\nPlease login or create an account to apply."
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>

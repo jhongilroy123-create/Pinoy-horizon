@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinoy Horizon | Find Jobs Abroad</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="hero">
+
+    <!-- Navigation -->
+    <nav>
+
+        <h2 class="logo">
+            <i class="fa-solid fa-plane-departure"></i>
+            PINOY HORIZON
+        </h2>
+
+       <div class="nav-links">
+
+    <a href="Pinoy Horizon Agency.html">Home</a>
+
+    <a href="Untitled-1.html">Jobs</a>
+
+    <a href="#">About</a>
+
+    <button onclick="openLogin()">Login</button>
+
+    <button class="signup" onclick="openSignup()">
+        Sign Up
+    </button>
+
+</div>      
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <section class="content">
+
+        <div class="text">
+
+            <p class="tag">
+                VERIFIED OVERSEAS EMPLOYMENT
+            </p>
+
+            <h1 id="country">
+                JAPAN
+            </h1>
+
+            <p id="description">
+                Thousands of verified jobs for caregivers,
+                factory workers, engineers and hospitality staff.
+            </p>
+
+
+            <!-- Search -->
+            <div class="search-box">
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search jobs, country, or industry">
+
+                <button id="searchBtn">
+                    <i class="fa-solid fa-search"></i>
+                    Search
+                </button>
+
+            </div>
+
+            <p id="searchResult"></p>
+
+        </div>
+
+
+        <!-- Countries -->
+        <div class="cards">
+
+    <div class="card active">
+        🇯🇵
+        <span>Japan</span>
+    </div>
+
+    <div class="card">
+        🇨🇦
+        <span>Canada</span>
+    </div>
+
+    <div class="card">
+        🇦🇪
+        <span>UAE</span>
+    </div>
+
+    <div class="card">
+        🇰🇷
+        <span>South Korea</span>
+    </div>
+
+    <div class="card">
+        🇩🇪
+        <span>Germany</span>
+    </div>
+
+</div>
+
+    </section>
+
+
+    <!-- Controls -->
+    <div class="controls">
+
+        <button id="prev">
+            <i class="fa-solid fa-arrow-left"></i>
+            Previous
+        </button>
+
+        <button id="next">
+            Next
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeLogin()">
+                &times;
+            </span>
+
+            <h2>Applicant Login</h2>
+
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="Email">
+
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Password">
+
+            <button onclick="login()">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SIGN UP MODAL -->
+    <div id="signupModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeSignup()">
+                &times;
+            </span>
+
+            <h2>Create Account</h2>
+
+            <input
+                id="name"
+                type="text"
+                placeholder="Full Name">
+
+            <input
+                id="email"
+                type="email"
+                placeholder="Email">
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Password">
+
+            <button onclick="signup()">
+                Sign Up
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- About -->
+    <div id="about"></div>
+
+</div>
+
+
+<!-- GSAP Animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<!-- Slider JavaScript -->
+<script src="slider.js"></script>
+
+</body>
+</html>

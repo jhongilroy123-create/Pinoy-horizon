@@ -1,0 +1,786 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    overflow: hidden;
+}
+
+
+/* =========================
+   HERO / BACKGROUND
+========================= */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("assets/images/japan.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+
+    position: relative;
+
+    animation: zoom 12s infinite alternate;
+}
+
+
+/* Background animation */
+
+@keyframes zoom {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 110%;
+    }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    width: 90%;
+    margin: auto;
+
+    padding: 30px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 28px;
+    color: white;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: #ff7a00;
+}
+
+
+/* Login / Signup buttons */
+
+.nav-links button {
+    padding: 10px 25px;
+
+    border-radius: 30px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+/* Login */
+
+.nav-links button:not(.signup) {
+    background: white;
+    color: #222;
+}
+
+
+.nav-links button:not(.signup):hover {
+    background: #ff7a00;
+    color: white;
+}
+
+
+/* Signup */
+
+.signup {
+    background: #ff7a00;
+    color: white;
+}
+
+
+.signup:hover {
+    background: #e56c00;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.content {
+    width: 90%;
+
+    margin: 45px auto 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 50px;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================
+   LEFT TEXT
+========================= */
+
+.text {
+    width: 60%;
+}
+
+
+.tag {
+    letter-spacing: 3px;
+
+    color: #ffb000;
+
+    font-size: 18px !important;
+
+    font-weight: 500;
+}
+
+
+h1 {
+    color: white;
+
+    font-size: 100px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin: 15px 0;
+}
+
+
+#description {
+    color: white;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    max-width: 800px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+    margin-top: 35px;
+
+    background: white;
+
+    width: 550px;
+    max-width: 100%;
+
+    padding: 8px;
+
+    border-radius: 40px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.search-box input {
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    padding: 15px;
+
+    font-size: 16px;
+
+    color: #222;
+
+    background: transparent;
+}
+
+
+.search-box input::placeholder {
+    color: #777;
+}
+
+
+.search-box button {
+    border: none;
+
+    background: #ff7a00;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+
+.search-box button:hover {
+    background: #e56c00;
+
+    transform: scale(1.03);
+}
+
+
+/* Search result */
+
+#searchResult {
+    margin-top: 15px;
+
+    color: #ffb000;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   COUNTRY CARDS
+========================= */
+
+.cards {
+    width: 380px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 0;
+}
+
+
+/* Individual country */
+
+.card {
+    width: 100%;
+
+    min-height: 68px;
+
+    padding: 17px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+
+    font-size: 24px;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Country name */
+
+.card span {
+    margin-left: 15px;
+
+    font-size: 23px;
+}
+
+
+/* Active country */
+
+.card.active {
+    background: #ff7a00;
+
+    transform: translateX(-15px);
+
+    box-shadow: 0 8px 25px rgba(255, 122, 0, 0.3);
+}
+
+
+/* Hover */
+
+.card:hover {
+    background: #ff7a00;
+
+    transform: translateX(-15px) scale(1.02);
+}
+
+
+/* =========================
+   PREVIOUS / NEXT BUTTONS
+========================= */
+
+.controls {
+    position: absolute;
+
+    bottom: 40px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 25px;
+
+    z-index: 20;
+}
+
+
+.controls button {
+    padding: 14px 32px;
+
+    border-radius: 40px;
+
+    border: none;
+
+    cursor: pointer;
+
+    background: white;
+
+    color: #222;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+.controls button:hover {
+    background: #ff7a00;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   LOGIN & SIGNUP MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+
+/* Modal box */
+
+.modal-content {
+    width: 400px;
+    max-width: 90%;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    animation: popup 0.3s ease;
+
+    position: relative;
+}
+
+
+/* Popup animation */
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.8);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* Modal title */
+
+.modal-content h2 {
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #222;
+}
+
+
+/* Modal inputs */
+
+.modal-content input {
+    width: 100%;
+
+    padding: 14px;
+
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+.modal-content input:focus {
+    border-color: #ff7a00;
+}
+
+
+/* Modal button */
+
+.modal-content button {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ff7a00;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.modal-content button:hover {
+    background: #e56c00;
+}
+
+
+/* Close button */
+
+.close {
+    position: absolute;
+
+    right: 20px;
+    top: 12px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    color: #555;
+
+    transition: 0.2s;
+}
+
+
+.close:hover {
+    color: #ff7a00;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .content {
+        gap: 25px;
+    }
+
+    .cards {
+        width: 320px;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    .card {
+        min-height: 62px;
+
+        padding: 14px 20px;
+    }
+
+    .card span {
+        font-size: 20px;
+    }
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .hero {
+        min-height: 100vh;
+
+        height: auto;
+
+        padding-bottom: 120px;
+    }
+
+
+    nav {
+        width: 90%;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    .content {
+        flex-direction: column;
+
+        margin-top: 30px;
+
+        width: 90%;
+    }
+
+
+    .text {
+        width: 100%;
+    }
+
+
+    h1 {
+        font-size: 60px;
+    }
+
+
+    #description {
+        font-size: 18px;
+    }
+
+
+    .search-box {
+        width: 100%;
+    }
+
+
+    .cards {
+        width: 100%;
+
+        margin-top: 30px;
+    }
+
+
+    .card {
+        min-height: 65px;
+    }
+
+
+    .controls {
+        position: relative;
+
+        bottom: auto;
+
+        margin: 40px auto 0;
+
+        justify-content: center;
+
+        transform: none;
+
+        left: auto;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    .nav-links button {
+        padding: 8px 16px;
+    }
+
+
+    h1 {
+        font-size: 50px;
+    }
+
+
+    .tag {
+        font-size: 14px !important;
+    }
+
+
+    #description {
+        font-size: 16px;
+    }
+
+
+    .search-box {
+        padding: 6px;
+    }
+
+
+    .search-box input {
+        padding: 12px;
+
+        font-size: 14px;
+    }
+
+
+    .search-box button {
+        padding: 12px 18px;
+    }
+
+
+    .card {
+        min-height: 60px;
+
+        padding: 13px 18px;
+
+        font-size: 21px;
+    }
+
+
+    .card span {
+        font-size: 18px;
+    }
+
+
+    .controls {
+        gap: 10px;
+    }
+
+
+    .controls button {
+        padding: 12px 20px;
+    }
+}
